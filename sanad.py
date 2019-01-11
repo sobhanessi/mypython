@@ -1,5 +1,12 @@
 #shomare baraye sanad zadan haye rasmi va gheyre rasmi
 
+#jahate yad avari:
+
+#1.yadam bashe baad az inke barname khast amali beshe, baraye
+#LOG giri ham datetime ro ham rah ba esme karbar write konam too yek file dg..
+
+#2.
+
 import jdatetime
 
 def gheyre_rasmi():
@@ -10,7 +17,7 @@ def gheyre_rasmi():
 
     data = fp.readlines()
     z = 0
-    
+        
     for i in data:
         z = int(i)
 
@@ -44,7 +51,38 @@ def gheyre_rasmi():
     fp.close()
     
 
+
+
+
+def rasmi():
+
+
+    fp = open("rasmi.txt",'r+')
+
+    data = fp.readlines()
+    z = 0
+    
+    for i in data:
+        z = int(i)
+
+    print("adade rasmi e shoma hast = {0:<5d}".format(z))
+
+    z = z + 1
+    z = str(z)
+
+    fp.seek(0)
+    fp.truncate()
+
+    fp.write(z)
+    fp.close()
+
+
+
+
+
+    
 gheyre_rasmi()
+rasmi()
 
     
 
